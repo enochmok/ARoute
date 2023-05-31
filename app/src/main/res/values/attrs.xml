@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircularContainer">
+        <attr name="rcv_topLeftRadiu" format="dimension"/>
+        <attr name="rcv_topRightRadiu" format="dimension"/>
+        <attr name="rcv_bottomRightRadiu" format="dimension"/>
+        <attr name="rcv_bottomLeftRadiu" format="dimension"/>
+    </declare-styleable>
+</resources>

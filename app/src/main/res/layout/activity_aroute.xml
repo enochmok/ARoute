@@ -1,0 +1,126 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ARoute">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="top" />
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="54dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/theme_color_bg"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_marginRight="16dp">
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/topbar_text"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_alignParentLeft="true"
+            android:text="Loading..."
+            android:textColor="#ffffff"/>
+
+    </RelativeLayout>
+
+    <scm.finalYearProject.aroute.MapTouchWrapper
+        android:id="@+id/map_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <scm.finalYearProject.aroute.widget.CircularContainer
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:rcv_topLeftRadiu="16dp"
+            app:rcv_topRightRadiu="16dp">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ARoute" />
+
+            <TextView
+                android:padding="8dp"
+                android:textColor="@android:color/black"
+                android:background="#AAFFFFFF"
+                android:layout_width="wrap_content"
+                android:fontFamily="monospace"
+                android:layout_height="wrap_content"
+                android:id="@+id/statusText"
+                android:textSize="8sp"
+                />
+        </scm.finalYearProject.aroute.widget.CircularContainer>
+
+
+
+    </scm.finalYearProject.aroute.MapTouchWrapper>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp"
+        android:background="@drawable/searchbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/inputLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingLeft="9dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/theme_color"
+            android:hint="@string/searchHintText"
+            android:minHeight="40dp"
+            android:layout_weight="4" />
+
+        <ImageView
+            android:id="@+id/imageViewSearch"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:src="@drawable/ic_baseline_search_24"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            app:tint="@color/black" />
+
+    </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
